@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PaymentGateway.Api.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08fafb4b2ddbdc408cdb3839f54888cadb04097d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f86025fd7e99cdfa7ee9d991f2d1559cfccac53a")]
 [assembly: System.Reflection.AssemblyProductAttribute("PaymentGateway.Api.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PaymentGateway.Api.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xlztSt/BOLo=",
+  "dgSpecHash": "Gy5B75YGp48=",
   "success": true,
-  "projectFilePath": "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/src/PaymentGateway.Api/PaymentGateway.Api.csproj",
+  "projectFilePath": "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/src/PaymentGateway.Api/PaymentGateway.Api.csproj",
   "expectedPackageFiles": [
     "/Users/magdelenemuthusamy/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/magdelenemuthusamy/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/src/PaymentGateway.Api/PaymentGateway.Api.csproj": {}
+    "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/src/PaymentGateway.Api/PaymentGateway.Api.csproj": {}
   },
   "projects": {
-    "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/src/PaymentGateway.Api/PaymentGateway.Api.csproj": {
+    "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/src/PaymentGateway.Api/PaymentGateway.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/src/PaymentGateway.Api/PaymentGateway.Api.csproj",
+        "projectUniqueName": "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/src/PaymentGateway.Api/PaymentGateway.Api.csproj",
         "projectName": "PaymentGateway.Api",
-        "projectPath": "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/src/PaymentGateway.Api/PaymentGateway.Api.csproj",
+        "projectPath": "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/src/PaymentGateway.Api/PaymentGateway.Api.csproj",
         "packagesPath": "/Users/magdelenemuthusamy/.nuget/packages/",
-        "outputPath": "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/src/PaymentGateway.Api/obj/",
+        "outputPath": "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/src/PaymentGateway.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/magdelenemuthusamy/.nuget/NuGet/NuGet.Config"

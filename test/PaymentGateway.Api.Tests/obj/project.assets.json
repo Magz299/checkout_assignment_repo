@@ -7834,11 +7834,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/test/PaymentGateway.Api.Tests/PaymentGateway.Api.Tests.csproj",
+      "projectUniqueName": "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/test/PaymentGateway.Api.Tests/PaymentGateway.Api.Tests.csproj",
       "projectName": "PaymentGateway.Api.Tests",
-      "projectPath": "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/test/PaymentGateway.Api.Tests/PaymentGateway.Api.Tests.csproj",
+      "projectPath": "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/test/PaymentGateway.Api.Tests/PaymentGateway.Api.Tests.csproj",
       "packagesPath": "/Users/magdelenemuthusamy/.nuget/packages/",
-      "outputPath": "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/test/PaymentGateway.Api.Tests/obj/",
+      "outputPath": "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/test/PaymentGateway.Api.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/magdelenemuthusamy/.nuget/NuGet/NuGet.Config"
@@ -7853,8 +7853,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/src/PaymentGateway.Api/PaymentGateway.Api.csproj": {
-              "projectPath": "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/src/PaymentGateway.Api/PaymentGateway.Api.csproj"
+            "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/src/PaymentGateway.Api/PaymentGateway.Api.csproj": {
+              "projectPath": "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/src/PaymentGateway.Api/PaymentGateway.Api.csproj"
             }
           }
         }

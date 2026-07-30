@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3PqLjgDkh+k=",
+  "dgSpecHash": "CEFYNZwwfG0=",
   "success": true,
-  "projectFilePath": "/Users/magdelenemuthusamy/Projects/checkout_dotnet_assignment/payment-gateway-challenge-dotnet/test/PaymentGateway.Api.Tests/PaymentGateway.Api.Tests.csproj",
+  "projectFilePath": "/Users/magdelenemuthusamy/Projects/Interview_assignment/checkout_assignment_repo/test/PaymentGateway.Api.Tests/PaymentGateway.Api.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/magdelenemuthusamy/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
     "/Users/magdelenemuthusamy/.nuget/packages/microsoft.aspnetcore.mvc.testing/6.0.24/microsoft.aspnetcore.mvc.testing.6.0.24.nupkg.sha512",
