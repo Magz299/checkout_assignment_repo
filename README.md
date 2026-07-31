@@ -69,15 +69,15 @@ The tests are unit tests and do not need Docker. They cover validation, reposito
 
 ```text
 src/PaymentGateway.Api/
-  Clients/            # acquiring-bank boundary
+  Clients/            # acquiring bank boundary
   Contracts/          # HTTP and simulator request/response DTOs
   Controllers/        # HTTP endpoints
   Domain/             # safe stored payment model and status enum
   ExceptionHandling/  # global ProblemDetails handler
   Repositories/       # in-memory payment storage
-  Services/           # payment-processing workflow
+  Services/           # payment processing workflow
   Validations/        # FluentValidation rules
 test/PaymentGateway.Api.Tests/
   ...                 # focused unit tests
-imposters/            # supplied bank-simulator configuration
+imposters/            # supplied bank simulator configuration
 ```
