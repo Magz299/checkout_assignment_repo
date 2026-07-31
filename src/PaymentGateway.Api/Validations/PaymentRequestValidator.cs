@@ -6,7 +6,6 @@ namespace PaymentGateway.Api.Validations;
 public sealed class PaymentRequestValidator : AbstractValidator<PostPaymentRequest>
 {
     private static readonly string[] SupportedCurrencies = ["GBP", "USD", "EUR"];
-    //use 3 most common/universal
 
     public PaymentRequestValidator()
     {
