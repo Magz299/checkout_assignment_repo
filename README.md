@@ -62,7 +62,7 @@ The tests are unit tests and do not need Docker. They cover validation, reposito
 - **Validation outcomes:** malformed input is represented as `Rejected`, returns `400`, is neither sent to the bank nor stored. Valid input can only be `Authorized` or `Declined` after the bank response.
 - **400 over 200 for Rejected:** a distinct status code was chosen over folding `Rejected` into a `200` alongside `Authorized`/`Declined`, since `Rejected` represents input that never reached the bank at all, while the other two represent a genuine attempt that did.
 - **No ID on rejected responses:** since rejected payments are never persisted, the response omits an `id` — there is nothing to retrieve later via `GET`.
-- **DI lifetimes match actual lifespan:** `IPaymentsRepository` and `IPaymentsService` are registered as Singleton to match the in-memory store's application-lifetime scope; validators are also Singleton, since they hold no per-request state and are safe to share.
+- **DI lifetimes match actual lifespan:** `IPaymentsRepository` and `IPaymentsService` are registered as Singleton to match the in-memory store's application lifetime scope; validators are also Singleton, since they hold no per-request state and are safe to share.
 - **Failure responses:** a global exception handler converts simulator unavailability to `503` and other bank communication errors to `502`, using `ProblemDetails` JSON.
 
 ## Project structure
