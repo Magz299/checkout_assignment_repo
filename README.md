@@ -54,14 +54,16 @@ The tests are unit tests and do not need Docker. They cover validation, reposito
 
 ## Design decisions
 
+I have made use of SOLID principles where appropriate, while keeping the implementation simple. This is was to find the balance between maintainability and testability, while not over-applying or engineering.
+
 - **Thin controller, service-led workflow:** the controller owns HTTP concerns; `PaymentsService` coordinates validation, the bank call, safe payment creation, and persistence.
 - **Explicit boundaries:** `IBankClient` isolates the acquiring-bank HTTP contract and `IPaymentsRepository` isolates storage. Both can be replaced in tests without running the simulator.
 - **In-memory persistence:** a thread-safe `ConcurrentDictionary` is appropriate for the exercise, which does not require a database. Data is intentionally lost on restart.
 - **Duplicate IDs fail loudly:** the repository rejects a duplicate payment ID outright rather than silently overwriting an existing record, since silently losing a payment record is a worse failure mode than an explicit error in a payments domain.
-- **Sensitive-data handling:** full PAN and CVV are used only while forwarding a valid request to the bank. The stored `Payment` has only the final four card digits.
+- **Sensitive-data handling:** full Card Number and CVV are used only while forwarding a valid request to the bank. The stored `Payment` has only the final four card digits.
 - **Validation outcomes:** malformed input is represented as `Rejected`, returns `400`, is neither sent to the bank nor stored. Valid input can only be `Authorized` or `Declined` after the bank response.
 - **400 over 200 for Rejected:** a distinct status code was chosen over folding `Rejected` into a `200` alongside `Authorized`/`Declined`, since `Rejected` represents input that never reached the bank at all, while the other two represent a genuine attempt that did.
-- **No ID on rejected responses:** since rejected payments are never persisted, the response omits an `id` — there is nothing to retrieve later via `GET`.
+- **No ID on rejected responses:** since rejected payments are never persisted, the response omits an `id`; there is nothing to retrieve later via `GET`.
 - **DI lifetimes match actual lifespan:** `IPaymentsRepository` and `IPaymentsService` are registered as Singleton to match the in-memory store's application lifetime scope; validators are also Singleton, since they hold no per-request state and are safe to share.
 - **Failure responses:** a global exception handler converts simulator unavailability to `503` and other bank communication errors to `502`, using `ProblemDetails` JSON.
 
