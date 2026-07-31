@@ -25,6 +25,7 @@ public sealed class PaymentRequestValidator : AbstractValidator<PostPaymentReque
             .WithMessage("Expiry month and year must be in the future.");
 
         RuleFor(request => request.Currency)
+            .Cascade(CascadeMode.Stop)
             .NotEmpty()
             .Length(3)
             .Must(currency => SupportedCurrencies.Contains(currency.ToUpperInvariant()))
@@ -41,7 +42,7 @@ public sealed class PaymentRequestValidator : AbstractValidator<PostPaymentReque
 
     private static bool HaveFutureExpiry(PostPaymentRequest request)
     {
-        if (request.ExpiryMonth is < 1 or > 12 || request.ExpiryYear < 1)
+        if (request.ExpiryMonth is < 1 or > 12 || request.ExpiryYear is < 1 or > 9999)
         {
             return false;
         }

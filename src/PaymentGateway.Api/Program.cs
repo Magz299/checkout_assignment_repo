@@ -4,11 +4,14 @@ using PaymentGateway.Api.Repositories;
 using PaymentGateway.Api.Services;
 using PaymentGateway.Api.Validations;
 using FluentValidation;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 builder.Services.AddValidatorsFromAssemblyContaining<PaymentRequestValidator>(ServiceLifetime.Singleton);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
