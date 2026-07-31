@@ -1,26 +1,47 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
-using PaymentGateway.Api.Models.Responses;
+using PaymentGateway.Api.Contracts.Requests;
+using PaymentGateway.Api.Contracts.Responses;
+using PaymentGateway.Api.Domain.Enums;
 using PaymentGateway.Api.Services;
 
 namespace PaymentGateway.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class PaymentsController : Controller
+public sealed class PaymentsController : ControllerBase
 {
-    private readonly PaymentsRepository _paymentsRepository;
+    private readonly IPaymentsService _paymentsService;
 
-    public PaymentsController(PaymentsRepository paymentsRepository)
+    public PaymentsController(IPaymentsService paymentsService)
     {
-        _paymentsRepository = paymentsRepository;
+        _paymentsService = paymentsService;
     }
 
-    [HttpGet("{id:guid}")]
-    public async Task<ActionResult<PostPaymentResponse?>> GetPaymentAsync(Guid id)
+    [HttpPost]
+    public async Task<ActionResult<PaymentResponse>> ProcessPaymentAsync(
+        [FromBody] PostPaymentRequest request,
+        CancellationToken cancellationToken)
     {
-        var payment = _paymentsRepository.Get(id);
+        var payment = await _paymentsService.ProcessAsync(request, cancellationToken);
 
-        return new OkObjectResult(payment);
+        if (payment.Status == PaymentStatus.Rejected)
+        {
+            return BadRequest(payment);
+        }
+
+        return CreatedAtRoute(
+            "GetPayment",
+            new { id = payment.Id },
+            payment);
+    }
+
+    [HttpGet("{id:guid}", Name = "GetPayment")]
+    public async Task<ActionResult<PaymentResponse>> GetPaymentAsync(
+        Guid id,
+        CancellationToken cancellationToken)
+    {
+        var payment = await _paymentsService.GetAsync(id, cancellationToken);
+
+        return payment is null ? NotFound() : Ok(payment);
     }
 }
